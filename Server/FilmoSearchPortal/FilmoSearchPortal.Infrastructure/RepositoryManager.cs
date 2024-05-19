@@ -1,6 +1,7 @@
 ﻿using FilmoSearchPortal.Domain.Interfaces;
 using FilmoSearchPortal.Domain.Interfaces.RepositoryInterfaces;
 using FilmoSearchPortal.Infrastructure.DbContexts;
+using FilmoSearchPortal.Infrastructure.Repositories;
 
 namespace FilmoSearchPortal.Infrastructure
 {
@@ -16,23 +17,24 @@ namespace FilmoSearchPortal.Infrastructure
 
         public RepositoryManager(ApplicationDbContext dbContext)
         {
-            _dbContext=dbContext;
-            _actorRepository = new Lazy<IActorRepository>(()=> new );
+            _dbContext = dbContext;
+            _actorRepository = new Lazy<IActorRepository>(() => new ActorRepository(_dbContext));
+            _directorRepository = new Lazy<IDirectorRepository>(() => new DirectorRepository(_dbContext));
+            _filmRepository = new Lazy<IFilmRepository>(() => new FilmRepository(_dbContext));
+            _genreRepository = new Lazy<IGenreRepository>(() => new GenreRepository(_dbContext));
+            _reviewRepository = new Lazy<IReviewRepository>(() => new ReviewRepository(_dbContext));
         }
 
-        public IActorRepository ActorRepository => throw new NotImplementedException();
+        public IActorRepository ActorRepository => _actorRepository.Value;
 
-        public IDirectorRepository DirectorRepository => throw new NotImplementedException();
+        public IDirectorRepository DirectorRepository => _directorRepository.Value;
 
-        public IFilmRepository FilmRepository => throw new NotImplementedException();
+        public IFilmRepository FilmRepository => _filmRepository.Value;
 
-        public IGenreRepository GenreRepository => throw new NotImplementedException();
+        public IGenreRepository GenreRepository => _genreRepository.Value;
 
-        public IReviewRepository ReviewRepository => throw new NotImplementedException();
+        public IReviewRepository ReviewRepository => _reviewRepository.Value;
 
-        public Task SaveAsync()
-        {
-            throw new NotImplementedException();
-        }
+        public async Task SaveAsync() => await _dbContext.SaveChangesAsync();
     }
 }

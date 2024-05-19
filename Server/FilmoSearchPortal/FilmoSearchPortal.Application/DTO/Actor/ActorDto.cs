@@ -1,4 +1,4 @@
-﻿using FilmoSearchPortal.Domain.Models;
+﻿using FilmoSearchPortal.Application.DTO.Film;
 
 namespace FilmoSearchPortal.Application.DTO.Actor
 {
@@ -8,6 +8,6 @@ namespace FilmoSearchPortal.Application.DTO.Actor
         public required string Name { get; set; }
         public string? Biography { get; set; }
 
-        public IEnumerable<Film>? Films { get; set; }
+        public IEnumerable<FilmDto>? Films { get; set; }
     }
 }

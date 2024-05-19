@@ -1,13 +1,8 @@
-﻿using FilmoSearchPortal.Domain.Models;
-
-namespace FilmoSearchPortal.Application.DTO.Actor
+﻿namespace FilmoSearchPortal.Application.DTO.Actor
 {
     public record ActorForUpdateDto
     {
-        public required int Id { get; set; }
-        public required string Name { get; set; }
+        public string? Name { get; set; }
         public string? Biography { get; set; }
-
-        public IEnumerable<Film>? Films { get; set; }
     }
 }

@@ -3,5 +3,5 @@ using MediatR;
 
 namespace FilmoSearchPortal.Application.CQRS.Queries.Actor
 {
-    public record GetActorCollectionQuery(int FilmId, bool TrackChanges) : IRequest<IEnumerable<ActorDto>>;
+    public record GetActorCollectionQuery(bool TrackChanges) : IRequest<IEnumerable<ActorDto>>;
 }

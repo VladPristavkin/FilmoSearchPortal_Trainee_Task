@@ -18,7 +18,8 @@ namespace FilmoSearchPortal.Application.CQRS.Queries.Actor
 
         public async Task<IEnumerable<ActorDto>> Handle(GetActorCollectionQuery request, CancellationToken cancellationToken)
         {
-            var actors = await _repositoryManager.ActorRepository.GetAllActorsAsync(request.FilmId, request.TrackChanges, cancellationToken);
+            var actors = await _repositoryManager.ActorRepository
+                .GetAllActorsAsync(request.TrackChanges, cancellationToken);
 
             var actorsDto = _mapper.Map<IEnumerable<ActorDto>>(actors);
 

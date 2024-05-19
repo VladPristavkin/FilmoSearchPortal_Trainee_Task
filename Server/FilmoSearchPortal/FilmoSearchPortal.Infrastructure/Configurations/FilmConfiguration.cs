@@ -23,7 +23,7 @@ namespace FilmoSearchPortal.Infrastructure.Configurations
             builder.Property(fl => fl.Rating).IsRequired();
 
             builder.HasOne(fl => fl.Director)
-                .WithMany()
+                .WithMany(dr => dr.Films)
                 .HasForeignKey(fl => fl.DirectorId);
 
             builder.HasMany(fl => fl.Actors)
@@ -35,7 +35,7 @@ namespace FilmoSearchPortal.Infrastructure.Configurations
             builder.HasMany(fl => fl.Genres)
               .WithMany(gr => gr.Films)
               .UsingEntity(
-              gr => gr.HasOne(typeof(Actor)).WithMany().HasForeignKey("GenreId"),
+              gr => gr.HasOne(typeof(Genre)).WithMany().HasForeignKey("GenreId"),
               fl => fl.HasOne(typeof(Film)).WithMany().HasForeignKey("FilmId"));
 
             builder.HasMany(fl => fl.Reviews)

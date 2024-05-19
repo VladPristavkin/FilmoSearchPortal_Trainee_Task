@@ -9,7 +9,7 @@ namespace FilmoSearchPortal.Infrastructure
 {
     public static class DependencyInjection
     {
-        public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("DbConnectionString");
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -18,6 +18,8 @@ namespace FilmoSearchPortal.Infrastructure
                 options.EnableSensitiveDataLogging();
             });
             services.AddScoped<IRepositoryManager, RepositoryManager>();
+
+            return services;
         }
     }
 }

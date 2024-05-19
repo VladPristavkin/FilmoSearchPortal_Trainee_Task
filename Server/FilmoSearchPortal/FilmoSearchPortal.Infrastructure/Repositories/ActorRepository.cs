@@ -17,10 +17,9 @@ namespace FilmoSearchPortal.Infrastructure.Repositories
             await FindAllByExpression(ac => ac.Id == id, trackChanges)
             .SingleOrDefaultAsync(token);
 
-        public async Task<IEnumerable<Actor>> GetAllActorsAsync(int filmId, bool trackChanges, CancellationToken token = default) =>
+        public async Task<IEnumerable<Actor>> GetAllActorsAsync(bool trackChanges, CancellationToken token = default) =>
             await FindAll(trackChanges)
-            .Where(ac=>ac.Films.Any(fl=>fl.Id==filmId))
-            .ToListAsync(token);
+           .ToListAsync(token);
 
         public void UpdateActor(Actor actor) => Update(actor);
     }

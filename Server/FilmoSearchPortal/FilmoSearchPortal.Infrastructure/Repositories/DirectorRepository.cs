@@ -13,7 +13,7 @@ namespace FilmoSearchPortal.Infrastructure.Repositories
 
         public void DeleteDirector(Director director) => Delete(director);
 
-        public async Task<IEnumerable<Director>> GetAllDirectorsByAsync(bool trackChanges,
+        public async Task<IEnumerable<Director>> GetAllDirectorsAsync(bool trackChanges,
             CancellationToken token = default) =>
             await FindAll(trackChanges)
             .ToListAsync(token);
