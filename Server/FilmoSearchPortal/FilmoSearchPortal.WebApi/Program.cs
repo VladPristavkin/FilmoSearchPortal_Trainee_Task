@@ -13,6 +13,10 @@ namespace FilmoSearchPortal.WebApi
             builder.Services.ConfigureIIS();
             builder.Services.ConfigureCors();
 
+            builder.Services.AddAuthentication();
+            builder.Services.ConfigureIdentity();
+            builder.Services.ConfigureJWT(builder.Configuration);
+
             builder.Services.AddApplication();
             builder.Services.AddInfrastructure(builder.Configuration);
 
@@ -33,6 +37,7 @@ namespace FilmoSearchPortal.WebApi
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();

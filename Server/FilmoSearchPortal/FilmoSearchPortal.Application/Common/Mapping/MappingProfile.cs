@@ -4,6 +4,7 @@ using FilmoSearchPortal.Application.DTO.Director;
 using FilmoSearchPortal.Application.DTO.Film;
 using FilmoSearchPortal.Application.DTO.Genre;
 using FilmoSearchPortal.Application.DTO.Review;
+using FilmoSearchPortal.Application.DTO.User;
 using FilmoSearchPortal.Domain.Models;
 
 namespace FilmoSearchPortal.Application.Common.Mapping
@@ -36,6 +37,8 @@ namespace FilmoSearchPortal.Application.Common.Mapping
             CreateMap<ReviewForCreatingDto, ReviewDto>().ReverseMap();
             CreateMap<ReviewForCreatingDto, Review>().ReverseMap();
             CreateMap<ReviewForUpdateDto, Review>().ReverseMap();
+
+            CreateMap<UserForRegistrationDto, User>().ReverseMap();
         }
     }
 }
