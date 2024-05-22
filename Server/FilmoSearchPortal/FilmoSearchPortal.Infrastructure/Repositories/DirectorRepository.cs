@@ -16,6 +16,7 @@ namespace FilmoSearchPortal.Infrastructure.Repositories
         public async Task<IEnumerable<Director>> GetAllDirectorsAsync(bool trackChanges,
             CancellationToken token = default) =>
             await FindAll(trackChanges)
+            .Include(dr => dr.Films)
             .ToListAsync(token);
 
         public async Task<Director?> GetDirectorByIdAsync(int id, bool trackChanges,

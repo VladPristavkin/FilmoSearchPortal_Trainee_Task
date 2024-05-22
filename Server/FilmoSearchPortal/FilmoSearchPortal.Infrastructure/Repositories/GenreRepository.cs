@@ -15,10 +15,12 @@ namespace FilmoSearchPortal.Infrastructure.Repositories
 
         public async Task<IEnumerable<Genre>> GetAllGenresAsync(bool trackChanges, CancellationToken token = default) =>
             await FindAll(trackChanges)
+            .Include(gn => gn.Films)
             .ToListAsync(token);
 
         public async Task<Genre?> GetGenreByIdAsync(int id, bool trackChanges, CancellationToken token = default) =>
             await FindAllByExpression(gn => gn.Id == id, trackChanges)
+            .Include(gn => gn.Films)
             .SingleOrDefaultAsync(token);
 
         public void UpdateGenre(Genre genre) => Update(genre);

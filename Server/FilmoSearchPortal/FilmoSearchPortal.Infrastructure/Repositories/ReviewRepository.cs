@@ -16,11 +16,13 @@ namespace FilmoSearchPortal.Infrastructure.Repositories
         public async Task<IEnumerable<Review>> GetAllReviewsAsync(int filmId, bool trackChanges,
             CancellationToken token = default) =>
             await FindAllByExpression(rv => rv.FilmId == filmId, trackChanges)
+            .Include(rv => rv.User)
             .ToListAsync(token);
 
         public async Task<Review?> GetReviewByIdAsync(int id, bool trackChanges,
             CancellationToken token = default) =>
             await FindAllByExpression(rv => rv.Id == id, trackChanges)
+            .Include(rv => rv.User)
             .SingleOrDefaultAsync(token);
 
         public void UpdateReview(Review review) => Update(review);
