@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FilmoSearchPortal.Infrastructure.DbContexts
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 

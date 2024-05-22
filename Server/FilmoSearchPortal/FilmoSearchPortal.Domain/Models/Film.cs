@@ -7,7 +7,7 @@
         public string? Description { get; set; }
         public required int ReleaseYear { get; set; }
         public required int Duration { get; set; }
-        public required float Rating { get; set; }
+        public float Rating { get; set; }
 
         public int DirectorId { get; set; }
         public Director? Director { get; set; }

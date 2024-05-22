@@ -6,7 +6,8 @@
         public int FilmId { get; set; }
         public Film? Film { get; set; }
 
-        //TODO: Add user part
+        public required string UserId { get; set; }
+        public User? User { get; set; }
 
         public required int Stars { get; set; }
         public required string Comment { get; set; }

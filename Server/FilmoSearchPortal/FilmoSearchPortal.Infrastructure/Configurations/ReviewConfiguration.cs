@@ -19,6 +19,10 @@ namespace FilmoSearchPortal.Infrastructure.Configurations
             builder.Property(vac => vac.Date).IsRequired();
             builder.Property(vac => vac.Date).HasConversion(v => v.ToUniversalTime(),
                 v => DateTime.SpecifyKind(v, DateTimeKind.Utc));
+
+            builder.HasOne(rv => rv.User)
+                .WithMany(us => us.Reviews)
+                .HasForeignKey(rv => rv.UserId);
         }
     }
 }
