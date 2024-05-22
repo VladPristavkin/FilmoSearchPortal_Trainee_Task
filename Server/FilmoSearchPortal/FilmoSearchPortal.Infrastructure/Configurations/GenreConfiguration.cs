@@ -15,6 +15,11 @@ namespace FilmoSearchPortal.Infrastructure.Configurations
             builder.HasIndex(gr => gr.Id).IsUnique();
 
             builder.Property(gr=>gr.Name).IsRequired();
+
+            builder.HasData(
+               new Genre { Id = 1, Name = "Action", Description = "Action movies" },
+               new Genre { Id = 2, Name = "Sci-Fi", Description = "Science Fiction movies" }
+           );
         }
     }
 }

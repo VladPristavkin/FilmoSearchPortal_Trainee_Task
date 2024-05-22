@@ -15,6 +15,11 @@ namespace FilmoSearchPortal.Infrastructure.Configurations
             builder.HasIndex(dr => dr.Id).IsUnique();
 
             builder.Property(dr => dr.Name).IsRequired();
+
+            builder.HasData(
+             new Director { Id = 1, Name = "Steven Spielberg", Biography = "Biography of Steven Spielberg" },
+             new Director { Id = 2, Name = "Christopher Nolan", Biography = "Biography of Christopher Nolan" }
+         );
         }
     }
 }
