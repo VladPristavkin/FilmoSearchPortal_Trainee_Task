@@ -6,7 +6,7 @@ using ActorEntity = FilmoSearchPortal.Domain.Models.Actor;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.Actor
 {
-    internal sealed class CreateActorCommandHandler : IRequestHandler<CreateActorCommand, ActorDto>
+    public sealed class CreateActorCommandHandler : IRequestHandler<CreateActorCommand, ActorDto>
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly IMapper _mapper;

@@ -5,7 +5,7 @@ using MediatR;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.Film
 {
-    internal sealed class UpdateFilmCommandHandler : IRequestHandler<UpdateFilmCommand, Unit>
+    public sealed class UpdateFilmCommandHandler : IRequestHandler<UpdateFilmCommand, Unit>
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly IMapper _mapper;

@@ -10,7 +10,7 @@ using ReviewEntity = FilmoSearchPortal.Domain.Models.Review;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.Film
 {
-    internal sealed class CreateFilmCommandHandler : IRequestHandler<CreateFilmCommand, FilmDto>
+    public sealed class CreateFilmCommandHandler : IRequestHandler<CreateFilmCommand, FilmDto>
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly IMapper _mapper;

@@ -4,7 +4,7 @@ using MediatR;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.Director
 {
-    internal sealed class DeleteDirectorCommandHandler : IRequestHandler<DeleteDirectorCommand, Unit>
+    public sealed class DeleteDirectorCommandHandler : IRequestHandler<DeleteDirectorCommand, Unit>
     {
         private readonly IRepositoryManager _repositoryManager;
 

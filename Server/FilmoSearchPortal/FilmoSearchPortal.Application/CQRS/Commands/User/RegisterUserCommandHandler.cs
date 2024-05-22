@@ -5,7 +5,7 @@ using UserEntity = FilmoSearchPortal.Domain.Models.User;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.User
 {
-    internal sealed class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, IdentityResult>
+    public sealed class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, IdentityResult>
     {
         private readonly IMapper _mapper;
         private readonly UserManager<UserEntity> _userManager;

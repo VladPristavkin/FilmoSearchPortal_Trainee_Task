@@ -6,7 +6,7 @@ using GenreEntity = FilmoSearchPortal.Domain.Models.Genre;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.Genre
 {
-    internal sealed class CreateGenreCommandHandler : IRequestHandler<CreateGenreCommand, GenreDto>
+    public sealed class CreateGenreCommandHandler : IRequestHandler<CreateGenreCommand, GenreDto>
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly IMapper _mapper;

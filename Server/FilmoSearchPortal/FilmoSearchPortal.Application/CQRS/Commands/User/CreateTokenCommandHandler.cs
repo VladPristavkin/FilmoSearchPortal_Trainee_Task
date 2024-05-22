@@ -10,7 +10,7 @@ using UserEntity = FilmoSearchPortal.Domain.Models.User;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.User
 {
-    internal sealed class CreateTokenCommandHandler : IRequestHandler<CreateTokenCommand, string>
+    public sealed class CreateTokenCommandHandler : IRequestHandler<CreateTokenCommand, string>
     {
         private readonly UserManager<UserEntity> _userManager;
         private readonly IConfiguration _configuration;

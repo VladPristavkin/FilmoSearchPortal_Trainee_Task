@@ -5,7 +5,7 @@ using MediatR;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.Review
 {
-    internal sealed class UpdateReviewCommandHandler : IRequestHandler<UpdateReviewCommand, Unit>
+    public sealed class UpdateReviewCommandHandler : IRequestHandler<UpdateReviewCommand, Unit>
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly IMapper _mapper;

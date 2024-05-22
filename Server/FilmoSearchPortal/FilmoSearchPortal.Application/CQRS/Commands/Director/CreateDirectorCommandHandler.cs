@@ -6,7 +6,7 @@ using DirectorEntity = FilmoSearchPortal.Domain.Models.Director;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.Director
 {
-    internal sealed class CreateDirectorCommandHandler : IRequestHandler<CreateDirectorCommand, DirectorDto>
+    public sealed class CreateDirectorCommandHandler : IRequestHandler<CreateDirectorCommand, DirectorDto>
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly IMapper _mapper;

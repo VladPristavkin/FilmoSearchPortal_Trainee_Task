@@ -4,7 +4,7 @@ using UserEntity = FilmoSearchPortal.Domain.Models.User;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.User
 {
-    internal sealed class ValidateUserCommandHandler : IRequestHandler<ValidateUserCommand, bool>
+    public sealed class ValidateUserCommandHandler : IRequestHandler<ValidateUserCommand, bool>
     {
         private readonly UserManager<UserEntity> _userManager;
 

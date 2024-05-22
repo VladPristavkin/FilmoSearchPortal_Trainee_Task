@@ -9,7 +9,7 @@ using UserEntity = FilmoSearchPortal.Domain.Models.User;
 
 namespace FilmoSearchPortal.Application.CQRS.Commands.Review
 {
-    internal sealed class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, ReviewDto>
+    public sealed class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, ReviewDto>
     {
         private readonly UserManager<UserEntity> _userManager;
         private readonly IRepositoryManager _repositoryManager;
