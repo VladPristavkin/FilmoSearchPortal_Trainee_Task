@@ -1,14 +1,12 @@
-﻿using FilmoSearchPortal.Application.DTO.Film;
+﻿using FilmoSearchPortal.Application.DTO.User;
 
 namespace FilmoSearchPortal.Application.DTO.Review
 {
     public record ReviewDto
     {
         public required int Id { get; set; }
-        public int FilmId { get; set; }
-        public FilmDto? Film { get; set; }
 
-        //TODO: Add user part
+        public UserForReviewDto? User { get; set; }
 
         public required int Stars { get; set; }
         public required string Comment { get; set; }

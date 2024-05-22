@@ -2,11 +2,12 @@
 {
     public record FilmForUpdateDto
     {
-        public string? Title { get; set; }
+        public required int Id { get; set; }
+        public required string Title { get; set; }
         public string? Description { get; set; }
-        public int? ReleaseYear { get; set; }
-        public int? Duration { get; set; }
-        public float? Rating { get; set; }
+        public required int ReleaseYear { get; set; }
+        public required int Duration { get; set; }
+        public float Rating { get; set; }
 
         public int DirectorId { get; set; }
 

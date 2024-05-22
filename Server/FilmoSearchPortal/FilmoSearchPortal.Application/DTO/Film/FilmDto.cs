@@ -12,13 +12,12 @@ namespace FilmoSearchPortal.Application.DTO.Film
         public string? Description { get; set; }
         public required int ReleaseYear { get; set; }
         public required int Duration { get; set; }
-        public required float Rating { get; set; }
+        public float Rating { get; set; }
 
-        public int DirectorId { get; set; }
-        public DirectorDto? Director { get; set; }
+        public DirectorForFilmDto? Director { get; set; }
 
-        public IEnumerable<ActorDto>? Actors { get; set; }
+        public IEnumerable<ActorForFilmDto>? Actors { get; set; }
         public IEnumerable<ReviewDto>? Reviews { get; set; }
-        public IEnumerable<GenreDto>? Genres { get; set; }
+        public IEnumerable<GenreForFilmDto>? Genres { get; set; }
     }
 }

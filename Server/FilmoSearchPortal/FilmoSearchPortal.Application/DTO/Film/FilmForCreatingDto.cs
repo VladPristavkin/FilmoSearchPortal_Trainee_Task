@@ -2,6 +2,7 @@
 {
     public record FilmForCreatingDto
     {
+        public required int Id { get; set; }
         public required string Title { get; set; }
         public string? Description { get; set; }
         public required int ReleaseYear { get; set; }
