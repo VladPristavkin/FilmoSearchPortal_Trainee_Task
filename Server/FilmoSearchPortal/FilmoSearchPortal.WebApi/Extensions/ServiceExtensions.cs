@@ -1,5 +1,5 @@
-﻿using FilmoSearchPortal.Infrastructure.DbContexts;
-using FilmoSearchPortal.Infrastructure.Models;
+﻿using FilmoSearchPortal.Domain.Models;
+using FilmoSearchPortal.Infrastructure.DbContexts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -15,7 +15,7 @@ namespace FilmoSearchPortal.WebApi.Extensions
             {
                 options.AddPolicy("CorsPolicy", builder =>
                 {
-                    builder.AllowAnyOrigin()
+                    builder.WithOrigins("http://localhost:3000")
                     .AllowAnyMethod()
                     .AllowAnyHeader();
                 });

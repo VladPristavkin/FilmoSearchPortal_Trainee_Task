@@ -37,5 +37,14 @@ namespace FilmoSearchPortal.WebApi.Controllers
 
             return StatusCode(201);
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Authenticate([FromBody] UserForAuthenticationDto user)
+        {
+            if (!await _sender.Send(new ValidateUserCommand(user)))
+                return Unauthorized();
+
+            return Ok(new { Token = await _sender.Send(new CreateTokenCommand(user)) });
+        }
     }
 }
