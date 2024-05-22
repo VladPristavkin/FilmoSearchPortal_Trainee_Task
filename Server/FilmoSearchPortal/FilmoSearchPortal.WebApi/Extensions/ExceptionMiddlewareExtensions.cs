@@ -6,7 +6,7 @@ namespace FilmoSearchPortal.WebApi.Extensions
 {
     public static class ExceptionMiddlewareExtensions
     {
-        public static void ConfigureExceptionHandler(this WebApplication app)
+        public static void ConfigureExceptionHandler(this WebApplication app, ILogger logger)
         {
             app.UseExceptionHandler(appError =>
             {
@@ -25,7 +25,8 @@ namespace FilmoSearchPortal.WebApi.Extensions
                             _ => StatusCodes.Status500InternalServerError,
                         };
 
-                        //logger.Error($"Something went wrong: {contextFeature.Error}");
+                        logger.LogError($"Something went wrong: {contextFeature.Error}");
+
                         await context.Response.WriteAsync(new ErrorDetails()
                         {
                             StatusCode = context.Response.StatusCode,
