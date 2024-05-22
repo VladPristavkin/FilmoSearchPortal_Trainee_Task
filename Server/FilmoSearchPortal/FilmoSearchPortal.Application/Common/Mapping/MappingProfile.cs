@@ -17,11 +17,13 @@ namespace FilmoSearchPortal.Application.Common.Mapping
             CreateMap<ActorForCreatingDto, ActorDto>().ReverseMap();
             CreateMap<ActorForCreatingDto, Actor>().ReverseMap();
             CreateMap<ActorForUpdateDto, Actor>().ReverseMap();
+            CreateMap<ActorForFilmDto, Actor>().ReverseMap();
 
             CreateMap<Director, DirectorDto>().ReverseMap();
             CreateMap<DirectorForCreatingDto, DirectorDto>().ReverseMap();
-            CreateMap<DirectorForCreatingDto, DirectorDto>().ReverseMap();
+            CreateMap<DirectorForCreatingDto, Director>().ReverseMap();
             CreateMap<DirectorForUpdateDto, Director>().ReverseMap();
+            CreateMap<DirectorForFilmDto, Director>().ReverseMap();
 
             CreateMap<Film, FilmDto>().ReverseMap();
             CreateMap<FilmForCreatingDto, FilmDto>().ReverseMap();
@@ -32,6 +34,7 @@ namespace FilmoSearchPortal.Application.Common.Mapping
             CreateMap<GenreForCreatingDto, GenreDto>().ReverseMap();
             CreateMap<GenreForCreatingDto, Genre>().ReverseMap();
             CreateMap<GenreForUpdateDto, Genre>().ReverseMap();
+            CreateMap<GenreForFilmDto, Genre>().ReverseMap();
 
             CreateMap<Review, ReviewDto>().ReverseMap();
             CreateMap<ReviewForCreatingDto, ReviewDto>().ReverseMap();
@@ -39,6 +42,7 @@ namespace FilmoSearchPortal.Application.Common.Mapping
             CreateMap<ReviewForUpdateDto, Review>().ReverseMap();
 
             CreateMap<UserForRegistrationDto, User>().ReverseMap();
+            CreateMap<UserForReviewDto, User>().ReverseMap();
         }
     }
 }
